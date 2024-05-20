@@ -5,7 +5,7 @@ import os
 
 app = FastAPI()
 
-'''# Database connection configuration
+# Database connection configuration
 db_config = {
     'host': os.getenv('DB_HOST'),
     'user': os.getenv('DB_USER'),
@@ -20,7 +20,7 @@ db_config = {
     'password': 'awshrdatabasepass',
     'database': 'hr_schema'
 }
-
+'''
 
 # Connect to MySQL database
 conn = mysql.connector.connect(**db_config)
