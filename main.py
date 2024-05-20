@@ -100,5 +100,7 @@ def delete_department(department_id: int):
 
 # Positions Endpoints
 # Similarly, define CRUD endpoints for Positions, Attendance, Salary, LeaveRequests, Training, Skills, and EmployeeSkills
-
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
 
