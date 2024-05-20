@@ -9,12 +9,6 @@ on:
     branches:
       - master
   workflow_dispatch:
-
-env:
-  db_name: ${{ secrets.DB_NAME }}
-  db_host: ${{ secrets.DB_HOST }}
-  db_password: ${{ secrets.DB_PASSWORD }}
-  db_user: ${{ secrets.DB_USER }}
   
 jobs:
   build:
