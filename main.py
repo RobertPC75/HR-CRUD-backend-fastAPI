@@ -17,6 +17,11 @@ db_config = {
 conn = mysql.connector.connect(**db_config)
 cursor = conn.cursor()
 
+# Root endpoint
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the HR API. Use this API to manage employees, departments, and more."}
+
 
 # Employees Endpoints
 @app.get("/employees/")
