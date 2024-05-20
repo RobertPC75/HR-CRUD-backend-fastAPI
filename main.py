@@ -5,6 +5,11 @@ import os
 
 app = FastAPI()
 
+DB_HOST = os.environ["db_host"]
+DB_PASSWORD = os.environ["db_password"]
+DB_USER = os.environ["db_user"]
+DB_NAME = os.environ["db_name"]
+
 # Database connection configuration
 db_config = {
     'host': os.getenv('DB_HOST'),
