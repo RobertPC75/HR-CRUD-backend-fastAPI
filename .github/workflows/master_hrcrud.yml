@@ -84,7 +84,8 @@ jobs:
 
       - name: Start FastAPI application
         run: |
-          cd $HOME/site/wwwroot
+          cd $GITHUB_WORKSPACE
           source venv/bin/activate
           uvicorn main:app --host 0.0.0.0 --port 80 --workers 4
+
           
