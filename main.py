@@ -5,13 +5,22 @@ import os
 
 app = FastAPI()
 
-# Database connection configuration
+'''# Database connection configuration
 db_config = {
     'host': os.getenv('DB_HOST'),
     'user': os.getenv('DB_USER'),
     'password': os.getenv('DB_PASSWORD'),
     'database': os.getenv('DB_NAME')
 }
+'''
+# Database connection configuration
+db_config = {
+    'host': 'hr-database.cfy80wwcwo87.us-east-2.rds.amazonaws.com',
+    'user': 'adminrobert',
+    'password': 'awshrdatabasepass',
+    'database': 'hr_schema'
+}
+
 
 # Connect to MySQL database
 conn = mysql.connector.connect(**db_config)
@@ -97,10 +106,7 @@ def delete_department(department_id: int):
     conn.commit()
     return {"message": f"Department with ID {department_id} deleted successfully"}
 
-
-# Positions Endpoints
-# Similarly, define CRUD endpoints for Positions, Attendance, Salary, LeaveRequests, Training, Skills, and EmployeeSkills
+# For Azure, ensure to use `if __name__ == "__main__"` block
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
-
